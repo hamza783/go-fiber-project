@@ -27,6 +27,8 @@ func initDatabase() {
 	}
 	fmt.Println("Database connection successfully opened")
 
+	// create a table/add missing columns based on the model
+	// don't delete/change any existing data
 	db.DB.AutoMigrate(&book.Book{})
 	fmt.Println("Database Migrated")
 }
